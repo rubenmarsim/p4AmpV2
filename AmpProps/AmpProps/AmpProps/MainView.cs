@@ -33,6 +33,7 @@ namespace AmpProps
             };
             Button btnClear = new Button
             {
+                IsEnabled=false,
                 Text = "Borrar",
             };
             Button btnConfig = new Button
@@ -155,6 +156,7 @@ namespace AmpProps
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
                 lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
                 pkrDividir.IsEnabled = true;
+                btnClear.IsEnabled = true;
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {

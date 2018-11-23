@@ -53,6 +53,18 @@ namespace AmpProps
                 VerticalOptions = LayoutOptions.Center,
                 IsEnabled = true,
             };
+            Label lblFacebook = new Label
+            {
+                Text = "Notifications",
+                FontSize = 30,
+                FontAttributes = FontAttributes.None,
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+            };
+            Switch swchFacebook = new Switch
+            {
+                HorizontalOptions = LayoutOptions.Start,
+                IsToggled = false,
+            };
             Button btnVolver = new Button
             {
                 Text="Volver",
@@ -63,7 +75,8 @@ namespace AmpProps
             this.Content = new StackLayout
             {
                 Children = {
-                    lblHeader, lblNotifications, swchNotifications, lblIdioma, pkrIdioma, btnVolver,
+                    lblHeader, lblNotifications, swchNotifications, lblIdioma, pkrIdioma,
+                    lblFacebook,swchFacebook,btnVolver, 
                 }
             };
         }

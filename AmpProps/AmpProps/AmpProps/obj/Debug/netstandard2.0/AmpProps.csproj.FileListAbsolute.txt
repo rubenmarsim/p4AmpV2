@@ -9,3 +9,14 @@ C:\Users\admin\Documents\GitHub\p4AmpProp\AmpProps\AmpProps\AmpProps\obj\Debug\n
 C:\Users\admin\Documents\GitHub\p4AmpProp\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\admin\Documents\GitHub\p4AmpProp\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.dll
 C:\Users\admin\Documents\GitHub\p4AmpProp\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.pdb
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\bin\Debug\netstandard2.0\AmpProps.deps.json
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\bin\Debug\netstandard2.0\AmpProps.dll
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\bin\Debug\netstandard2.0\AmpProps.pdb
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.AssemblyInfo.cs
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.dll
+C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\obj\Debug\netstandard2.0\AmpProps.pdb

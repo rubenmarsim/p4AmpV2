@@ -31,6 +31,14 @@ namespace AmpProps
                 FontAttributes = FontAttributes.Bold,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
+            Button btnClear = new Button
+            {
+                Text = "Borrar",
+            };
+            Button btnConfig = new Button
+            {
+                Text = "Config"
+            };
             Label lblImporte = new Label
             {
                 FontSize = 20,
@@ -56,7 +64,7 @@ namespace AmpProps
                 oListPickerDividir.Add("Cinco");
             Picker pkrDividir = new Picker
             {
-                TextColor=Color.LimeGreen,
+                TextColor =Color.LimeGreen,
                 SelectedItem = "Uno",
                 ItemsSource = oListPickerDividir,
                 Title = "Personas a dividir la cuenta",
@@ -65,7 +73,7 @@ namespace AmpProps
             };
             Label lblDividirsinPropina = new Label
             {
-                BackgroundColor=Color.LimeGreen,
+                BackgroundColor =Color.LimeGreen,
                 FontSize = 20,
                 Text = "Por persona sin propina: ",
                 HorizontalOptions = LayoutOptions.Fill,
@@ -84,7 +92,7 @@ namespace AmpProps
                 oListPickerServicio.Add("Cinco Estrellas");
             Picker pkrServicio = new Picker
             {
-                TextColor=Color.LimeGreen,
+                TextColor =Color.LimeGreen,
                 SelectedItem = "Una Estrella",
                 ItemsSource = oListPickerServicio,
                 Title = "Valoracion del servicio",
@@ -101,6 +109,7 @@ namespace AmpProps
             Editor edtrTotal = new Editor
             {
                 BackgroundColor = Color.LimeGreen,
+                TextColor = Color.Black,
                 IsEnabled = false,
             };
             Label lblTotalxPersona = new Label
@@ -134,14 +143,14 @@ namespace AmpProps
                 valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
                 valServicio = CTipInfo.Servicio.ToString();
 
-                edtrTotal.Text = CTipInfo.Total.ToString();
+                edtrTotal.Text = "$" + CTipInfo.Total.ToString();
 
                 valTotalxPersona = CTipInfo.TotalxPersona.ToString();
-                lblTotalxPersona.Text = "Total por persona: " + valTotalxPersona;
+                lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
                 valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                lblPropinaTotal.Text = "Propina Total: " + valPropinaTotal;
+                lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: " + valPropinaxPersona;
+                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {
@@ -156,14 +165,14 @@ namespace AmpProps
                 lblDividirsinPropina.Text = "Por persona sin propina: " + valDividirsinPropina;
 
                 valServicio = CTipInfo.Servicio.ToString();
-                edtrTotal.Text = CTipInfo.Total.ToString();
+                edtrTotal.Text = "$"+CTipInfo.Total.ToString();
 
                 valTotalxPersona = CTipInfo.TotalxPersona.ToString();
-                lblTotalxPersona.Text = "Total por persona: " + valTotalxPersona;
+                lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
                 valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                lblPropinaTotal.Text = "Propina Total: " + valPropinaTotal;
+                lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: " + valPropinaxPersona;
+                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
             };
             pkrServicio.SelectedIndexChanged += (sender, e) =>
             {
@@ -178,14 +187,33 @@ namespace AmpProps
                 valServicio = CTipInfo.Servicio.ToString();
                 lblServicio.Text = "Servicio: " + valServicio + "%";
 
-                edtrTotal.Text = CTipInfo.Total.ToString();
+                edtrTotal.Text = "$"+CTipInfo.Total.ToString();
 
                 valTotalxPersona = CTipInfo.TotalxPersona.ToString();
-                lblTotalxPersona.Text = "Total por persona: " + valTotalxPersona;
+                lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
                 valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                lblPropinaTotal.Text = "Propina Total: " + valPropinaTotal;
+                lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: " + valPropinaxPersona;
+                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+            };
+            btnClear.Clicked += (sender, e) =>
+            {
+                edtrImporte.Text="0";
+                lblDividir.Text = "Dividir:";
+                pkrDividir.SelectedItem = "Uno";
+                pkrDividir.Title = "Personas a dividir la cuenta";
+                lblDividirsinPropina.Text = "Por Persona sin Propina:";
+                lblServicio.Text = "Servicio:";
+                pkrServicio.SelectedItem = "Una Estrella";
+                pkrServicio.Title = "Valoracion del servicio";
+                edtrTotal.Text = "0";
+                lblTotalxPersona.Text = "Total por persona";
+                lblPropinaTotal.Text = "Total Propina";
+                lblPropinaxPersona.Text = "Propina por persona";
+            };
+            edtrImporte.Focused += (sender, e) =>
+            {
+                edtrImporte.Text = "";
             };
             #endregion
 
@@ -194,8 +222,8 @@ namespace AmpProps
             {
                 Children =
                 {
-                    lblHeader, lblImporte, edtrImporte, lblDividir, pkrDividir,
-                    lblDividirsinPropina, lblServicio, pkrServicio, lblTotal,
+                    btnClear,btnConfig,lblHeader, lblImporte, edtrImporte, lblDividir,
+                    pkrDividir, lblDividirsinPropina, lblServicio, pkrServicio, lblTotal,
                     edtrTotal, lblTotalxPersona, lblPropinaTotal, lblPropinaxPersona
                 }
             };

@@ -352,11 +352,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\p4AmpProp\\AmpProps\\AmpProps\\AmpProps\\AmpProps.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\p4AmpV2\\AmpProps\\AmpProps\\AmpProps\\AmpProps.csproj",
       "projectName": "AmpProps",
-      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\p4AmpProp\\AmpProps\\AmpProps\\AmpProps\\AmpProps.csproj",
+      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\p4AmpV2\\AmpProps\\AmpProps\\AmpProps\\AmpProps.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\p4AmpProp\\AmpProps\\AmpProps\\AmpProps\\obj\\",
+      "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\p4AmpV2\\AmpProps\\AmpProps\\AmpProps\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

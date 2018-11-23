@@ -155,8 +155,12 @@ namespace AmpProps
                 lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
                 lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
-                pkrDividir.IsEnabled = true;
-                btnClear.IsEnabled = true;
+                if (edtrImporte.Text!="")
+                {
+                    pkrDividir.IsEnabled = true;
+                    btnClear.IsEnabled = true;
+                }
+                
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {
@@ -178,8 +182,9 @@ namespace AmpProps
                 valPropinaTotal = CTipInfo.PropinaTotal.ToString();
                 lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;                
                 pkrServicio.IsEnabled = true;
+                
             };
             pkrServicio.SelectedIndexChanged += (sender, e) =>
             {

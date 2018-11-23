@@ -215,6 +215,10 @@ namespace AmpProps
             {
                 edtrImporte.Text = "";
             };
+            btnConfig.Clicked += (sender, e) =>
+            {
+
+            };
             #endregion
 
             #region Layout
@@ -222,7 +226,7 @@ namespace AmpProps
             {
                 Children =
                 {
-                    btnClear,btnConfig,lblHeader, lblImporte, edtrImporte, lblDividir,
+                    lblHeader, btnClear, btnConfig, lblImporte, edtrImporte, lblDividir,
                     pkrDividir, lblDividirsinPropina, lblServicio, pkrServicio, lblTotal,
                     edtrTotal, lblTotalxPersona, lblPropinaTotal, lblPropinaxPersona
                 }

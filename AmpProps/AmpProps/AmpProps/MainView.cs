@@ -139,28 +139,32 @@ namespace AmpProps
             #region Eventos
             edtrImporte.Unfocused += (sender, e) =>
             {
-                CTipInfo.Importe = double.Parse(edtrImporte.Text);
-
-                CTipInfo.Calculos();
-
-                valDividir = CTipInfo.Dividir.ToString();
-                valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
-                valServicio = CTipInfo.Servicio.ToString();
-
-                edtrTotal.Text = "$" + CTipInfo.Total.ToString();
-
-                valTotalxPersona = CTipInfo.TotalxPersona.ToString();
-                lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
-                valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
-                valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
-                if (edtrImporte.Text!="")
+                if (edtrImporte.Text != "")
+                {
+                    
+                }
+                else
                 {
                     pkrDividir.IsEnabled = true;
                     btnClear.IsEnabled = true;
-                }
-                
+                    edtrImporte.Text = "0";
+                    CTipInfo.Importe = double.Parse(edtrImporte.Text);
+
+                    CTipInfo.Calculos();
+
+                    valDividir = CTipInfo.Dividir.ToString();
+                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
+                    valServicio = CTipInfo.Servicio.ToString();
+
+                    edtrTotal.Text = "$" + CTipInfo.Total.ToString();
+
+                    valTotalxPersona = CTipInfo.TotalxPersona.ToString();
+                    lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
+                    valPropinaTotal = CTipInfo.PropinaTotal.ToString();
+                    lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
+                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
+                    lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                }                 
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {

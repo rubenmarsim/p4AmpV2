@@ -111,6 +111,7 @@ namespace AmpProps
                 BackgroundColor = Color.LimeGreen,
                 TextColor = Color.Black,
                 IsEnabled = false,
+                FontAttributes = FontAttributes.Bold,
             };
             Label lblTotalxPersona = new Label
             {
@@ -215,10 +216,8 @@ namespace AmpProps
             {
                 edtrImporte.Text = "";
             };
-            btnConfig.Clicked += (sender, e) =>
-            {
-
-            };
+            btnConfig.Clicked += async (sender, args) =>
+                await Navigation.PushModalAsync(new ConfigView());
             #endregion
 
             #region Layout

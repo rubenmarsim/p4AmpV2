@@ -201,9 +201,7 @@ C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\D
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\System.Xml.pdb
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.Forms.Core.pdb
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.Forms.Xaml.pdb
-C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps\bin\Debug\netstandard2.0\AmpProps.dll
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\AmpProps.Android.pdb
-C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\bin\Debug\AmpProps.dll.mdb
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\AmpProps.dll.mdb
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\FormsViewGroup.dll.mdb
 C:\Users\admin\Documents\GitHub\p4AmpV2\AmpProps\AmpProps\AmpProps.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb

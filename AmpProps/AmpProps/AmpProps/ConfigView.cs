@@ -32,7 +32,7 @@ namespace AmpProps
             };
             Label lblIdioma = new Label
             {
-                Text = "Notifications",
+                Text = "Idioma",
                 FontSize = 30,
                 FontAttributes = FontAttributes.None,
                 HorizontalOptions = LayoutOptions.StartAndExpand,
@@ -55,7 +55,7 @@ namespace AmpProps
             };
             Label lblFacebook = new Label
             {
-                Text = "Notifications",
+                Text = "Facebook",
                 FontSize = 30,
                 FontAttributes = FontAttributes.None,
                 HorizontalOptions = LayoutOptions.StartAndExpand,

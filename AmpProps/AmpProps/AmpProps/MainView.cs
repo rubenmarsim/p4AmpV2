@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Android.Content;
+using Android.Widget;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace AmpProps
 {
-	public class MainView : ContentPage
+    public class MainView : ContentPage
 	{
         #region variables
         string valDividir;
@@ -16,6 +16,7 @@ namespace AmpProps
         string valTotalxPersona;
         string valPropinaTotal;
         string valPropinaxPersona;
+        private Context Context;
         #endregion
         public MainView ()
 		{
@@ -31,12 +32,12 @@ namespace AmpProps
                 FontAttributes = FontAttributes.Bold,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
-            Button btnClear = new Button
+            Xamarin.Forms.Button btnClear = new Xamarin.Forms.Button
             {
                 IsEnabled=false,
                 Text = "Borrar",
             };
-            Button btnConfig = new Button
+            Xamarin.Forms.Button btnConfig = new Xamarin.Forms.Button
             {
                 Text = "Config"
             };
@@ -139,15 +140,16 @@ namespace AmpProps
             #region Eventos
             edtrImporte.Unfocused += (sender, e) =>
             {
-                if (edtrImporte.Text != "")
+                if (edtrImporte.Text.Equals(""))
                 {
-                    
+                    pkrDividir.IsEnabled = false;
+                    btnClear.IsEnabled = false;
+                    Android.Widget.Toast.MakeText(Android.App.Application.Context, "Introduce un valor valido", ToastLength.Long).Show();
                 }
                 else
                 {
                     pkrDividir.IsEnabled = true;
-                    btnClear.IsEnabled = true;
-                    edtrImporte.Text = "0";
+                    btnClear.IsEnabled = true;                    
                     CTipInfo.Importe = double.Parse(edtrImporte.Text);
 
                     CTipInfo.Calculos();
@@ -245,7 +247,7 @@ namespace AmpProps
                     edtrTotal, lblTotalxPersona, lblPropinaTotal, lblPropinaxPersona
                 }
             };
-            Content = new ScrollView
+            Content = new Xamarin.Forms.ScrollView
             {
                 Content = stackLayout
             };

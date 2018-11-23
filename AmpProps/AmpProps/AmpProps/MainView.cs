@@ -58,6 +58,13 @@ namespace AmpProps
                 Text = "Dividir: ",
                 HorizontalOptions = LayoutOptions.Fill,
             };
+            Xamarin.Forms.Button btnAñadirDividir = new Xamarin.Forms.Button
+            {
+                Text = "+",
+                FontAttributes = FontAttributes.Bold,
+                HorizontalOptions = LayoutOptions.End,
+                
+            };
             var oListPickerDividir = new List<string>();
                 oListPickerDividir.Add("Uno");
                 oListPickerDividir.Add("Dos");
@@ -243,7 +250,7 @@ namespace AmpProps
                 Children =
                 {
                     lblHeader, btnClear, btnConfig, lblImporte, edtrImporte, lblDividir,
-                    pkrDividir, lblDividirsinPropina, lblServicio, pkrServicio, lblTotal,
+                    pkrDividir, lblDividirsinPropina, lblServicio,btnAñadirDividir, pkrServicio, lblTotal,
                     edtrTotal, lblTotalxPersona, lblPropinaTotal, lblPropinaxPersona
                 }
             };

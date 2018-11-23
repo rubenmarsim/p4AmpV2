@@ -48,7 +48,7 @@ namespace AmpProps
                 HorizontalOptions=LayoutOptions.Fill,
             };
             Editor edtrImporte = new Editor
-            {
+            {                
                 TextColor=Color.LimeGreen,
                 Keyboard = Keyboard.Numeric,
             };

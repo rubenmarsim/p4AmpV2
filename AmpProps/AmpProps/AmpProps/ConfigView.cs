@@ -11,10 +11,53 @@ namespace AmpProps
     {
         public ConfigView()
         {
-            Content = new StackLayout
+            Label lblHeader = new Label
+            {
+                Text = "Options",
+                FontSize=50,
+                FontAttributes = FontAttributes.Bold,
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+            };
+            Label lblNotifications = new Label
+            {
+                Text="Notifications",
+                FontSize = 30,
+                FontAttributes = FontAttributes.None,
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+            };
+            Switch swchNotifications = new Switch
+            {
+                HorizontalOptions = LayoutOptions.Start,
+                IsToggled = true,
+            };
+            Label lblIdioma = new Label
+            {
+                Text = "Notifications",
+                FontSize = 30,
+                FontAttributes = FontAttributes.None,
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+            };
+            var oListPickerIdioma = new List<string>();
+                oListPickerIdioma.Add("Castellano");
+                oListPickerIdioma.Add("Catalan");
+                oListPickerIdioma.Add("Ingles");
+                oListPickerIdioma.Add("Japones");
+                oListPickerIdioma.Add("Frances");
+                oListPickerIdioma.Add("Ruso");
+            Picker pkrIdioma = new Picker
+            {
+                SelectedItem = "Castellano",
+                ItemsSource = oListPickerIdioma,
+                Title = "Castellano",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.Center,
+                IsEnabled = false,
+            };
+
+            this.Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
+                    lblHeader, lblNotifications, swchNotifications, lblIdioma, pkrIdioma,
                 }
             };
         }

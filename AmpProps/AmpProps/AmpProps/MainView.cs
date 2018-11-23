@@ -70,6 +70,7 @@ namespace AmpProps
                 Title = "Personas a dividir la cuenta",
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Center,
+                IsEnabled = false,
             };
             Label lblDividirsinPropina = new Label
             {
@@ -98,6 +99,7 @@ namespace AmpProps
                 Title = "Valoracion del servicio",
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Center,
+                IsEnabled = false,
             };
             Label lblTotal = new Label
             {
@@ -152,6 +154,7 @@ namespace AmpProps
                 lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
                 lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                pkrDividir.IsEnabled = true;
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {
@@ -174,6 +177,7 @@ namespace AmpProps
                 lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
                 valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
                 lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                pkrServicio.IsEnabled = true;
             };
             pkrServicio.SelectedIndexChanged += (sender, e) =>
             {

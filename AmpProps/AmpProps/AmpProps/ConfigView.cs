@@ -51,13 +51,19 @@ namespace AmpProps
                 Title = "Castellano",
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Center,
-                IsEnabled = false,
+                IsEnabled = true,
             };
+            Button btnVolver = new Button
+            {
+                Text="Volver",
+            };
+            btnVolver.Clicked += async (sender, args) =>
+                await Navigation.PushModalAsync(new MainView());
 
             this.Content = new StackLayout
             {
                 Children = {
-                    lblHeader, lblNotifications, swchNotifications, lblIdioma, pkrIdioma,
+                    lblHeader, lblNotifications, swchNotifications, lblIdioma, pkrIdioma, btnVolver,
                 }
             };
         }

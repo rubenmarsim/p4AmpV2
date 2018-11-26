@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 using Android.Widget;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -64,6 +65,21 @@ namespace AmpProps
                 oListPickerDividir.Add("Tres");
                 oListPickerDividir.Add("Cuatro");
                 oListPickerDividir.Add("Cinco");
+                oListPickerDividir.Add("Seis");
+                oListPickerDividir.Add("Siete");
+                oListPickerDividir.Add("Ocho");
+                oListPickerDividir.Add("Nueve");
+                oListPickerDividir.Add("Diez");
+                oListPickerDividir.Add("Once");
+                oListPickerDividir.Add("Doce");
+                oListPickerDividir.Add("Trece");
+                oListPickerDividir.Add("Catorce");
+                oListPickerDividir.Add("Quince");
+                oListPickerDividir.Add("Dieciseis");
+                oListPickerDividir.Add("Diecisiete");
+                oListPickerDividir.Add("Dieciocho");
+                oListPickerDividir.Add("Diecinueve");
+                oListPickerDividir.Add("Veinte");
             Picker pkrDividir = new Picker
             {
                 TextColor =Color.LimeGreen,
@@ -88,11 +104,11 @@ namespace AmpProps
                 HorizontalOptions = LayoutOptions.Fill,
             };
             var oListPickerServicio = new List<string>();
-                oListPickerServicio.Add("Una Estrella");
-                oListPickerServicio.Add("Dos Estrellas");
-                oListPickerServicio.Add("Tres Estrellas");
-                oListPickerServicio.Add("Cuatro Estrellas");
-                oListPickerServicio.Add("Cinco Estrellas");
+                oListPickerServicio.Add("Una Estrella 5%");
+                oListPickerServicio.Add("Dos Estrellas 10%");
+                oListPickerServicio.Add("Tres Estrellas 15%");
+                oListPickerServicio.Add("Cuatro Estrellas 20%");
+                oListPickerServicio.Add("Cinco Estrellas 25%");
             Picker pkrServicio = new Picker
             {
                 TextColor =Color.LimeGreen,
@@ -152,21 +168,23 @@ namespace AmpProps
                     pkrDividir.IsEnabled = true;
                     btnClear.IsEnabled = true;                    
                     CTipInfo.Importe = double.Parse(edtrImporte.Text);
+                    pkrDividir.SelectedItem = "Uno";
+                    pkrServicio.SelectedItem = "Una Estrella 5%";
 
                     CTipInfo.Calculos();
 
-                    valDividir = CTipInfo.Dividir.ToString();
-                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
-                    valServicio = CTipInfo.Servicio.ToString();
+                    valDividir = CTipInfo.Dividir.ToString("#.##");
+                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString("#.##");
+                    valServicio = CTipInfo.Servicio.ToString("#.##");
 
-                    edtrTotal.Text = "$" + CTipInfo.Total.ToString();
+                    edtrTotal.Text = "$" + CTipInfo.Total.ToString("#.##");
 
-                    valTotalxPersona = CTipInfo.TotalxPersona.ToString();
+                    valTotalxPersona = CTipInfo.TotalxPersona.ToString("#.##");
                     lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
-                    valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                    lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
-                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                    lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                    valPropinaTotal = CTipInfo.PropinaTotal.ToString("#.##");
+                    lblPropinaTotal.Text = "Propina Total: $" +valPropinaTotal;
+                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString("#.##");
+                    lblPropinaxPersona.Text = "Propina por persona: $" +valPropinaxPersona;
                 }                 
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
@@ -185,19 +203,19 @@ namespace AmpProps
 
                     CTipInfo.Calculos();
 
-                    valDividir = CTipInfo.Dividir.ToString();
+                    valDividir = CTipInfo.Dividir.ToString("#.##");
                     lblDividir.Text = "Dividir: " + valDividir;
-                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
+                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString("#.##");
                     lblDividirsinPropina.Text = "Por persona sin propina: " + valDividirsinPropina;
 
-                    valServicio = CTipInfo.Servicio.ToString();
+                    valServicio = CTipInfo.Servicio.ToString("#.##");
                     edtrTotal.Text = "$" + CTipInfo.Total.ToString();
 
-                    valTotalxPersona = CTipInfo.TotalxPersona.ToString();
+                    valTotalxPersona = CTipInfo.TotalxPersona.ToString("#.##");
                     lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
-                    valPropinaTotal = CTipInfo.PropinaTotal.ToString();
+                    valPropinaTotal = CTipInfo.PropinaTotal.ToString("#.##");
                     lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
-                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
+                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString("#.##");
                     lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
                     pkrServicio.IsEnabled = true;
                 }
@@ -205,40 +223,60 @@ namespace AmpProps
             };
             pkrServicio.SelectedIndexChanged += (sender, e) =>
             {
-                CTipInfo.Importe = double.Parse(edtrImporte.Text);
-                CTipInfo.DividirItem = pkrDividir.SelectedItem.ToString();
-                CTipInfo.ServicioItem = pkrServicio.SelectedItem.ToString();
+                if (edtrImporte.Text.Equals(""))
+                {
+                    pkrDividir.IsEnabled = false;
+                    pkrServicio.IsEnabled = false;
+                    btnClear.IsEnabled = false;
+                    Android.Widget.Toast.MakeText(Android.App.Application.Context, "Introduce un valor valido", ToastLength.Long).Show();
+                }
+                else
+                {
+                    CTipInfo.Importe = double.Parse(edtrImporte.Text);
+                    CTipInfo.DividirItem = pkrDividir.SelectedItem.ToString();
+                    CTipInfo.ServicioItem = pkrServicio.SelectedItem.ToString();
 
-                CTipInfo.Calculos();
+                    CTipInfo.Calculos();
 
-                valDividir = CTipInfo.Dividir.ToString();
-                valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
-                valServicio = CTipInfo.Servicio.ToString();
-                lblServicio.Text = "Servicio: " + valServicio + "%";
+                    valDividir = CTipInfo.Dividir.ToString("#.##");
+                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString("#.##");
+                    valServicio = CTipInfo.Servicio.ToString("#.##");
+                    lblServicio.Text = "Servicio: " + valServicio + "%";
 
-                edtrTotal.Text = "$"+CTipInfo.Total.ToString();
+                    edtrTotal.Text = "$" + CTipInfo.Total.ToString("#.##");
 
-                valTotalxPersona = CTipInfo.TotalxPersona.ToString();
-                lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
-                valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
-                valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                    valTotalxPersona = CTipInfo.TotalxPersona.ToString("#.##");
+                    lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
+                    valPropinaTotal = CTipInfo.PropinaTotal.ToString("#.##");
+                    lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
+                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString("#.##");
+                    lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                }
             };
             btnClear.Clicked += (sender, e) =>
             {
-                edtrImporte.Text="0";
-                lblDividir.Text = "Dividir:";
-                pkrDividir.SelectedItem = "Uno";
-                pkrDividir.Title = "Personas a dividir la cuenta";
-                lblDividirsinPropina.Text = "Por Persona sin Propina:";
-                lblServicio.Text = "Servicio:";
-                pkrServicio.SelectedItem = "Una Estrella";
-                pkrServicio.Title = "Valoracion del servicio";
-                edtrTotal.Text = "0";
-                lblTotalxPersona.Text = "Total por persona";
-                lblPropinaTotal.Text = "Total Propina";
-                lblPropinaxPersona.Text = "Propina por persona";
+                if (edtrImporte.Text.Equals(""))
+                {
+                    pkrDividir.IsEnabled = false;
+                    pkrServicio.IsEnabled = false;
+                    btnClear.IsEnabled = false;
+                    Android.Widget.Toast.MakeText(Android.App.Application.Context, "Introduce un valor valido", ToastLength.Long).Show();
+                }
+                else
+                {
+                    edtrImporte.Text = "";
+                    lblDividir.Text = "Dividir:";
+                    pkrDividir.SelectedItem = "Uno";
+                    lblDividirsinPropina.Text = "Por Persona sin Propina:";
+                    lblServicio.Text = "Servicio:";
+                    pkrServicio.SelectedItem = "Una Estrella";
+                    edtrTotal.Text = "";
+                    lblTotalxPersona.Text = "Total por persona";
+                    lblPropinaTotal.Text = "Total Propina";
+                    lblPropinaxPersona.Text = "Propina por persona";
+                    edtrImporte.Focus();
+                    Toast.MakeText(Android.App.Application.Context, "Borrado correctamente", ToastLength.Long).Show();
+                }
             };
             edtrImporte.Focused += (sender, e) =>
             {

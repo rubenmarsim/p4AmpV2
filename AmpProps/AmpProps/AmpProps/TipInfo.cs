@@ -103,6 +103,51 @@ namespace AmpProps
                 case "Cinco":
                     Dividir = 5;
                     break;
+                case "Seis":
+                    Dividir = 6;
+                    break;
+                case "Siete":
+                    Dividir = 7;
+                    break;
+                case "Ocho":
+                    Dividir = 8;
+                    break;
+                case "Nueve":
+                    Dividir = 9;
+                    break;
+                case "Diez":
+                    Dividir = 10;
+                    break;
+                case "Once":
+                    Dividir = 11;
+                    break;
+                case "Doce":
+                    Dividir = 12;
+                    break;
+                case "Trece":
+                    Dividir = 13;
+                    break;
+                case "Catorce":
+                    Dividir = 14;
+                    break;
+                case "Quince":
+                    Dividir = 15;
+                    break;
+                case "Dieciseis":
+                    Dividir = 16;
+                    break;
+                case "Diecisiete":
+                    Dividir = 17;
+                    break;
+                case "Dieciocho":
+                    Dividir = 18;
+                    break;
+                case "Diecinueve":
+                    Dividir = 19;
+                    break;
+                case "Veinte":
+                    Dividir = 20;
+                    break;
             }
                 
         }
@@ -110,19 +155,19 @@ namespace AmpProps
         {
             switch (ServicioItem)
             {
-                case "Una Estrella":
+                case "Una Estrella 5%":
                     Servicio = 5;
                     break;
-                case "Dos Estrellas":
+                case "Dos Estrellas 10%":
                     Servicio = 10;
                     break;
-                case "Tres Estrellas":
+                case "Tres Estrellas 15%":
                     Servicio = 15;
                     break;
-                case "Cuatro Estrellas":
+                case "Cuatro Estrellas 20%":
                     Servicio = 20;
                     break;
-                case "Cinco Estrellas":
+                case "Cinco Estrellas 25%":
                     Servicio = 25;
                     break;
             }

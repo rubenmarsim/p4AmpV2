@@ -154,8 +154,11 @@ namespace AmpProps
             #endregion
 
             #region Eventos
+            //Decimos que cuando salgamos del editor del importe haga lo siguiente
             edtrImporte.Unfocused += (sender, e) =>
             {
+                //Si el editor del importe esta vacio
+                //Deshabilitamos los demas controles y enseñamos una notificacion para que se introduzca un valor valido
                 if (edtrImporte.Text.Equals(""))
                 {
                     pkrDividir.IsEnabled = false;
@@ -163,6 +166,8 @@ namespace AmpProps
                     btnClear.IsEnabled = false;
                     Android.Widget.Toast.MakeText(Android.App.Application.Context, "Introduce un valor valido", ToastLength.Long).Show();
                 }
+                //Sino activamos los controles que nos interesan para el siguiente paso y pasamos los datos a las propiedades
+                //de la clase TipInfo o nos traemos la informacion de alli segun nos convenga
                 else
                 {
                     pkrDividir.IsEnabled = true;
@@ -187,6 +192,7 @@ namespace AmpProps
                     lblPropinaxPersona.Text = "Propina por persona: $" +valPropinaxPersona;
                 }                 
             };
+            //Decimos que cuando cambie el valor del picker haga lo siguiente
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {
                 if (edtrImporte.Text.Equals(""))
@@ -253,6 +259,7 @@ namespace AmpProps
                     lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
                 }
             };
+            //Decimos que cuando se haga click en el boton haga lo siguiente
             btnClear.Clicked += (sender, e) =>
             {
                 if (edtrImporte.Text.Equals(""))
@@ -278,10 +285,12 @@ namespace AmpProps
                     Toast.MakeText(Android.App.Application.Context, "Borrado correctamente", ToastLength.Long).Show();
                 }
             };
+            //cuando el editor de importe coja el foco borramos el valor que haya escrito
             edtrImporte.Focused += (sender, e) =>
             {
                 edtrImporte.Text = "";
             };
+            //Cuando se pulse el boton Config nos lleva a la activity de config
             btnConfig.Clicked += async (sender, args) =>
                 await Navigation.PushModalAsync(new ConfigView());
             #endregion

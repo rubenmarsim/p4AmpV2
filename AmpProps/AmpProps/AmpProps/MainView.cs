@@ -143,6 +143,7 @@ namespace AmpProps
                 if (edtrImporte.Text.Equals(""))
                 {
                     pkrDividir.IsEnabled = false;
+                    pkrServicio.IsEnabled = false;
                     btnClear.IsEnabled = false;
                     Android.Widget.Toast.MakeText(Android.App.Application.Context, "Introduce un valor valido", ToastLength.Long).Show();
                 }
@@ -170,26 +171,36 @@ namespace AmpProps
             };
             pkrDividir.SelectedIndexChanged += (sender, e) =>
             {
-                CTipInfo.Importe = double.Parse(edtrImporte.Text);
-                CTipInfo.DividirItem = pkrDividir.SelectedItem.ToString();
+                if (edtrImporte.Text.Equals(""))
+                {
+                    pkrDividir.IsEnabled = false;
+                    pkrServicio.IsEnabled = false;
+                    btnClear.IsEnabled = false;
+                    Android.Widget.Toast.MakeText(Android.App.Application.Context, "Introduce un valor valido", ToastLength.Long).Show();
+                }
+                else
+                {
+                    CTipInfo.Importe = double.Parse(edtrImporte.Text);
+                    CTipInfo.DividirItem = pkrDividir.SelectedItem.ToString();
 
-                CTipInfo.Calculos();
+                    CTipInfo.Calculos();
 
-                valDividir = CTipInfo.Dividir.ToString();
-                lblDividir.Text = "Dividir: " + valDividir;
-                valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
-                lblDividirsinPropina.Text = "Por persona sin propina: " + valDividirsinPropina;
+                    valDividir = CTipInfo.Dividir.ToString();
+                    lblDividir.Text = "Dividir: " + valDividir;
+                    valDividirsinPropina = CTipInfo.DividirsinPropina.ToString();
+                    lblDividirsinPropina.Text = "Por persona sin propina: " + valDividirsinPropina;
 
-                valServicio = CTipInfo.Servicio.ToString();
-                edtrTotal.Text = "$"+CTipInfo.Total.ToString();
+                    valServicio = CTipInfo.Servicio.ToString();
+                    edtrTotal.Text = "$" + CTipInfo.Total.ToString();
 
-                valTotalxPersona = CTipInfo.TotalxPersona.ToString();
-                lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
-                valPropinaTotal = CTipInfo.PropinaTotal.ToString();
-                lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
-                valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
-                lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;                
-                pkrServicio.IsEnabled = true;
+                    valTotalxPersona = CTipInfo.TotalxPersona.ToString();
+                    lblTotalxPersona.Text = "Total por persona: $" + valTotalxPersona;
+                    valPropinaTotal = CTipInfo.PropinaTotal.ToString();
+                    lblPropinaTotal.Text = "Propina Total: $" + valPropinaTotal;
+                    valPropinaxPersona = CTipInfo.PropinaxPersona.ToString();
+                    lblPropinaxPersona.Text = "Propina por persona: $" + valPropinaxPersona;
+                    pkrServicio.IsEnabled = true;
+                }
                 
             };
             pkrServicio.SelectedIndexChanged += (sender, e) =>
